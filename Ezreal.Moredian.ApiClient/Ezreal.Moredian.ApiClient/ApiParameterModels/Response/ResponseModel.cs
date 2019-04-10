@@ -7,7 +7,7 @@ namespace Ezreal.Moredian.ApiClient.ApiParameterModels.Response
     /// <summary>
     /// 响应模型
     /// </summary>
-    public abstract class ResponseModel : ApiParameterModelBase
+    public  class ResponseModel : ApiParameterModelBase
     {
         /// <summary>
         /// 响应码

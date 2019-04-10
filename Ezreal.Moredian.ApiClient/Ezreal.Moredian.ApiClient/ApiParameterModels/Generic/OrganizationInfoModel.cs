@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ezreal.Moredian.ApiClient.ApiParameterModels.Request.App
+namespace Ezreal.Moredian.ApiClient.ApiParameterModels.Generic
 {
-    public class OrganizationCreateRequestModel
+    public class OrganizationInfoModel
     {
-        [ApiParameterName("orgName")]
+        [ApiParameterName("OrganizationName")]
         public string OrgName { get; set; }
         public string Address { get; set; }
         public string Contact { get; set; }

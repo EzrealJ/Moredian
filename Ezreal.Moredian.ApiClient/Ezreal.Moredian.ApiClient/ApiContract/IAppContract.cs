@@ -1,9 +1,7 @@
-﻿using Ezreal.Moredian.ApiClient.ApiParameterModels.Request.App;
+﻿using Ezreal.Moredian.ApiClient.ApiParameterModels.Generic;
+using Ezreal.Moredian.ApiClient.ApiParameterModels.Request.App;
 using Ezreal.Moredian.ApiClient.ApiParameterModels.Response;
 using Ezreal.Moredian.ApiClient.ApiParameterModels.Response.App;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using WebApiClient;
 using WebApiClient.Attributes;
@@ -12,7 +10,6 @@ namespace Ezreal.Moredian.ApiClient.ApiContract
 {
     public interface IAppContract : IHttpApi
     {
-
         [HttpGet("app/getAppToken")]
         [JsonReturn]
         ITask<Response<AppTokenGetResponseModel>> GetAppToken(
@@ -22,9 +19,27 @@ namespace Ezreal.Moredian.ApiClient.ApiContract
 
         [HttpGet("app/createOrg")]
         [JsonReturn]
-        ITask<ResponseOfStruct<bool>> CreateOrganization(
-    [PathQuery]OrganizationCreateRequestModel requestModel,
-    [Timeout]double timeout = 10000,
-    CancellationToken cancellationToken = default(CancellationToken));
+        ITask<Response<OrganizationCreateResponseModel>> CreateOrganization(
+            [PathQuery]string appToken,
+            [JsonContent]OrganizationInfoModel requestModel,
+            [Timeout]double timeout = 10000,
+            CancellationToken cancellationToken = default(CancellationToken));
+
+        [HttpGet("app/getOrgAccessToken")]
+        [JsonReturn]
+        ITask<Response<OrganizationAccessTokenGetResponseModel>> GetOrganizationAccessToken(
+              [PathQuery]string appToken,
+        [JsonContent]OrganizationAccessTokenGetRequestModel requestModel,
+        [Timeout]double timeout = 10000,
+        CancellationToken cancellationToken = default(CancellationToken));
+
+
+        [HttpGet("org/update")]
+        [JsonReturn]
+        ITask<ResponseOfStruct<bool>> UpdateOrganization(
+            [PathQuery]string accessToken,
+            [JsonContent]OrganizationInfoModel requestModel,
+            [Timeout]double timeout = 10000,
+            CancellationToken cancellationToken = default(CancellationToken));
     }
 }
