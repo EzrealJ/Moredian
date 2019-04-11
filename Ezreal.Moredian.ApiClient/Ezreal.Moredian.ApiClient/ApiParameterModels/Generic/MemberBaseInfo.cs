@@ -7,33 +7,42 @@ using System.Threading.Tasks;
 
 namespace Ezreal.Moredian.ApiClient.ApiParameterModels.Generic
 {
-    class MemberInfo
+    /// <summary>
+    /// 成员基础信息
+    /// <para>
+    /// 其中verifyFace和showFace文件项需要作为单独的接口参数传递,不能定义在模型中
+    /// </para>
+    /// </summary>
+    public class MemberBaseInfo
     {
         /// <summary>
-        /// **企业内的人员id，非魔点内部的人员id
+        /// **企业内的人员id，非魔点内部的人员id,在创建人员的时候必须
+        /// <para>
+        /// 文档描述是long类型，经过确认实际为varchar(128)
+        /// </para>
         /// </summary>
         [ApiParameterName("tpUserId")]
-        public long TpUserID { get; set; }
+        public string TpUserID { get; set; }
         /// <summary>
-        /// **魔点内部的人员id
+        /// **魔点内部的人员id，在修改人员的时候必须 
         /// </summary>
         [ApiParameterName("memberId")]
-        public long MemberId { get; set; }
-        
+        public long MemberID { get; set; }
+
         /// <summary>
         /// *人员名称
         /// </summary>
         public string MemberName { get; set; }
 
-        /// <summary>
-        /// 识别验证图片（底库图片）
-        /// </summary>
-        public string VerifyFace { get; set; }
+        ///// <summary>
+        ///// 识别验证图片（底库图片）
+        ///// </summary>
+        //public string VerifyFace { get; set; }
 
-        /// <summary>
-        /// 个性图片
-        /// </summary>
-        public string ShowFace { get; set; }
+        ///// <summary>
+        ///// 个性图片
+        ///// </summary>
+        //public string ShowFace { get; set; }
 
         /// <summary>
         /// *手机号
@@ -59,14 +68,14 @@ namespace Ezreal.Moredian.ApiClient.ApiParameterModels.Generic
 
 
         /// <summary>
-        /// 性别,见性别常量PERSON_SEX
+        /// 性别
         /// </summary>
-        public int Sex { get; set; }
+        public Enums.EnumSex Sex { get; set; }
 
         /// <summary>
-        /// 证件，见证件常量 CERT_TYPE
+        /// 证件
         /// </summary>
-        public int CertType { get; set; }
+        public Enums.EnumCertType CertType { get; set; }
 
         /// <summary>
         /// 证件号

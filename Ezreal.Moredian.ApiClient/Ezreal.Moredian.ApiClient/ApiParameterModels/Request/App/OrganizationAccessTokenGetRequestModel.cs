@@ -9,7 +9,7 @@ namespace Ezreal.Moredian.ApiClient.ApiParameterModels.Request.App
 {
    public class OrganizationAccessTokenGetRequestModel
     {
-        public string AppToken { get; set; }
+
         [ApiParameterName("orgId")]
         public string OrganizationID { get; set; }
         [ApiParameterName("orgAuthKey")]

@@ -9,5 +9,9 @@ namespace Ezreal.Moredian.ApiClient
     public class ApiFactory
     {
         public static Api.AppClient CreateAppClient() => new Api.AppClient(null);
+
+        public static Api.DeviceClient CreateDeviceClient() => new Api.DeviceClient(null);
+
+        public static Api.MemberClient CreateMemberClient() => new Api.MemberClient(null);
     }
 }

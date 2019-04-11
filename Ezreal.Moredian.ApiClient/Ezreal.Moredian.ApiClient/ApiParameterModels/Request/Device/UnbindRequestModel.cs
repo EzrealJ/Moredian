@@ -10,13 +10,12 @@ namespace Ezreal.Moredian.ApiClient.ApiParameterModels.Request.Device
     public class UnbindRequestModel
     {
 
-        public class Rootobject
-        {
-            [ApiParameterName("deviceId")]
-            public string DeviceID { get; set; }
-            [ApiParameterName("deviceSn")]
-            public string DeviceSn { get; set; }
-        }
+
+        [ApiParameterName("deviceId")]
+        public string DeviceId { get; set; }
+        [ApiParameterName("deviceSn")]
+        public string DeviceSn { get; set; }
+
 
     }
 }

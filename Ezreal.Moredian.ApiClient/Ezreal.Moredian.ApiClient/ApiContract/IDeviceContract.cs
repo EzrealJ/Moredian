@@ -12,9 +12,9 @@ using WebApiClient.Attributes;
 
 namespace Ezreal.Moredian.ApiClient.ApiContract
 {
-    interface IDeviceContract:IHttpApi
+    public interface IDeviceContract : IHttpApi
     {
-        [HttpGet("device/activation")]
+        [HttpPost("device/activation")]
         [JsonReturn]
         ITask<Response<ActivationResponseModel>> Activation(
     [PathQuery]string accessToken,
@@ -31,7 +31,7 @@ namespace Ezreal.Moredian.ApiClient.ApiContract
 [Timeout]double timeout = 10000,
 CancellationToken cancellationToken = default(CancellationToken));
 
-        [HttpGet("device/updateControlInfo")]
+        [HttpPost("device/updateControlInfo")]
         [JsonReturn]
         ITask<ResponseModel> UpdateControlInfo(
 [PathQuery]string accessToken,
@@ -39,7 +39,7 @@ CancellationToken cancellationToken = default(CancellationToken));
 [Timeout]double timeout = 10000,
 CancellationToken cancellationToken = default(CancellationToken));
 
-        [HttpGet("device/unbind")]
+        [HttpPost("device/unbind")]
         [JsonReturn]
         ITask<ResponseModel> Unbind(
 [PathQuery]string accessToken,
