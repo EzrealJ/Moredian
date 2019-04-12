@@ -13,7 +13,7 @@ namespace Ezreal.Moredian.ApiClient.ApiParameterModels.Generic
     /// 其中verifyFace和showFace文件项需要作为单独的接口参数传递,不能定义在模型中
     /// </para>
     /// </summary>
-    public class MemberBaseInfo
+    public class MemberBaseInfoModel
     {
         /// <summary>
         /// **企业内的人员id，非魔点内部的人员id,在创建人员的时候必须
@@ -21,13 +21,13 @@ namespace Ezreal.Moredian.ApiClient.ApiParameterModels.Generic
         /// 文档描述是long类型，经过确认实际为varchar(128)
         /// </para>
         /// </summary>
-        [ApiParameterName("tpUserId")]
-        public string TpUserID { get; set; }
+   
+        public string TpUserId { get; set; }
         /// <summary>
         /// **魔点内部的人员id，在修改人员的时候必须 
         /// </summary>
-        [ApiParameterName("memberId")]
-        public long MemberID { get; set; }
+      
+        public ulong MemberId { get; set; }
 
         /// <summary>
         /// *人员名称

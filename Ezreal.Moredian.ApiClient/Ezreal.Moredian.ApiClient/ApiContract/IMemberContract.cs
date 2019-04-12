@@ -21,9 +21,9 @@ namespace Ezreal.Moredian.ApiClient.ApiContract
 
         [HttpPost("member/create")]
         [JsonReturn]
-        ITask<ResponseOfString> Create(
+        ITask<ResponseOfStruct<ulong>> Create(
         [PathQuery]string accessToken,
-        [MulitpartContent]MemberBaseInfo requestModel,
+        [MulitpartContent]MemberBaseInfoModel requestModel,
         MulitpartFile verifyFace = null,
         MulitpartFile showFace = null,
         [Timeout]double timeout = 30 * 1000,
@@ -31,9 +31,9 @@ namespace Ezreal.Moredian.ApiClient.ApiContract
 
         [HttpPost("member/update")]
         [JsonReturn]
-        ITask<ResponseOfString> Update(
+        ITask<ResponseOfStruct<ulong>> Update(
         [PathQuery]string accessToken,
-        [MulitpartContent]MemberBaseInfo requestModel,
+        [MulitpartContent]MemberBaseInfoModel requestModel,
         MulitpartFile verifyFace = null,
         MulitpartFile showFace = null,
         [Timeout]double timeout = 30 * 1000,
@@ -63,6 +63,23 @@ namespace Ezreal.Moredian.ApiClient.ApiContract
         [PathQuery]string accessToken,
         [MulitpartContent]MemberUpdateVerifyImgRequestModel requestModel,
         MulitpartFile verifyFace = null,
+        [Timeout]double timeout = 30 * 1000,
+        CancellationToken cancellationToken = default(CancellationToken));
+
+
+        [HttpPost("member/bindGroup")]
+        [JsonReturn]
+        ITask<ResponseModel> BindGroup(
+        [PathQuery]string accessToken,
+        [JsonContent]MemberBindGroupRequestModel requestModel,
+        [Timeout]double timeout = 30 * 1000,
+        CancellationToken cancellationToken = default(CancellationToken));
+
+        [HttpPost("member/unbindGroup")]
+        [JsonReturn]
+        ITask<ResponseModel> UnbindGroup(
+        [PathQuery]string accessToken,
+        [JsonContent]MemberUnBindGroupRequestModel requestModel,
         [Timeout]double timeout = 30 * 1000,
         CancellationToken cancellationToken = default(CancellationToken));
     }

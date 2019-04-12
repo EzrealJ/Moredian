@@ -23,19 +23,6 @@ namespace Ezreal.Moredian.ApiClient.Api
             return AppContract.GetAppToken(requestModel, cancellationToken: cancellationToken);
         }
 
-        public ITask<Response<OrganizationCreateResponseModel>> CreateOrganization(string appToken, OrganizationInfoModel requestModel, TimeSpan? timeout = null, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return AppContract.CreateOrganization(appToken, requestModel, cancellationToken: cancellationToken);
-        }
 
-        public ITask<Response<OrganizationAccessTokenGetResponseModel>> GetOrganizationAccessToken(string appToken, OrganizationAccessTokenGetRequestModel requestModel, TimeSpan? timeout = null, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return AppContract.GetOrganizationAccessToken(appToken, requestModel, cancellationToken: cancellationToken);
-        }
-
-        public ITask<ResponseOfStruct<bool>> UpdateOrganization(string accessToken, OrganizationInfoModel requestModel, TimeSpan? timeout = null, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return AppContract.UpdateOrganization(accessToken, requestModel, cancellationToken: cancellationToken);
-        }
     }
 }

@@ -16,43 +16,60 @@ namespace Ezreal.Moredian.ApiClient.ApiContract
     {
         [HttpPost("device/activation")]
         [JsonReturn]
-        ITask<Response<ActivationResponseModel>> Activation(
-    [PathQuery]string accessToken,
-    [JsonContent]ActivationRequestModel requestModel,
-    [Timeout]double timeout = 10000,
-    CancellationToken cancellationToken = default(CancellationToken));
+        ITask<Response<DeviceActivationResponseModel>> Activation(
+        [PathQuery]string accessToken,
+        [JsonContent]DeviceActivationRequestModel requestModel,
+        [Timeout]double timeout = 10000,
+        CancellationToken cancellationToken = default(CancellationToken));
 
 
         [HttpGet("device/deviceId")]
         [JsonReturn]
-        ITask<ResponseOfString> GetDeviceID(
-[PathQuery]string accessToken,
-[PathQuery]string deviceSn,
-[Timeout]double timeout = 10000,
-CancellationToken cancellationToken = default(CancellationToken));
+        ITask<ResponseOfString> GetDeviceId(
+        [PathQuery]string accessToken,
+        [PathQuery]string deviceSn,
+        [Timeout]double timeout = 10000,
+        CancellationToken cancellationToken = default(CancellationToken));
 
         [HttpPost("device/updateControlInfo")]
         [JsonReturn]
         ITask<ResponseModel> UpdateControlInfo(
-[PathQuery]string accessToken,
-[JsonContent]ControlInfoUpdateRequestModel requestModel,
-[Timeout]double timeout = 10000,
-CancellationToken cancellationToken = default(CancellationToken));
+        [PathQuery]string accessToken,
+        [JsonContent]DeviceControlInfoUpdateRequestModel requestModel,
+        [Timeout]double timeout = 10000,
+        CancellationToken cancellationToken = default(CancellationToken));
 
         [HttpPost("device/unbind")]
         [JsonReturn]
         ITask<ResponseModel> Unbind(
-[PathQuery]string accessToken,
-[JsonContent]UnbindRequestModel requestModel,
-[Timeout]double timeout = 10000,
-CancellationToken cancellationToken = default(CancellationToken));
+        [PathQuery]string accessToken,
+        [JsonContent]DeviceUnbindRequestModel requestModel,
+        [Timeout]double timeout = 10000,
+        CancellationToken cancellationToken = default(CancellationToken));
 
         [HttpGet("device/getDynamicPwd")]
         [JsonReturn]
         ITask<ResponseModel> GetDynamicPassword(
-[PathQuery]string accessToken,
-[JsonContent]DynamicPasswordGetRequestModel requestModel,
-[Timeout]double timeout = 10000,
-CancellationToken cancellationToken = default(CancellationToken));
+        [PathQuery]string accessToken,
+        [JsonContent]DeviceDynamicPasswordGetRequestModel requestModel,
+        [Timeout]double timeout = 10000,
+        CancellationToken cancellationToken = default(CancellationToken));
+
+
+        [HttpPost("device/group/binding")]
+        [JsonReturn]
+        ITask<ResponseModel> BindGroup(
+        [PathQuery]string accessToken,
+        [JsonContent]DeviceBindGroupRequestModel requestModel,
+        [Timeout]double timeout = 30 * 1000,
+        CancellationToken cancellationToken = default(CancellationToken));
+
+        [HttpPost("device/group/configuration")]
+        [JsonReturn]
+        ITask<ResponseModel> UnbindGroup(
+        [PathQuery]string accessToken,
+        [JsonContent]DeviceConfigGroupRequestModel requestModel,
+        [Timeout]double timeout = 30 * 1000,
+        CancellationToken cancellationToken = default(CancellationToken));
     }
 }

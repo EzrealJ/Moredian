@@ -7,14 +7,11 @@ using System.Threading.Tasks;
 
 namespace Ezreal.Moredian.ApiClient.ApiParameterModels.Request.Device
 {
-    public class UnbindRequestModel
+    public class DeviceControlInfoUpdateRequestModel
     {
-
-
-        [ApiParameterName("deviceId")]
         public string DeviceId { get; set; }
-        [ApiParameterName("deviceSn")]
-        public string DeviceSn { get; set; }
+        public int MultiPerson { get; set; }
+        public int ControlDoorTime { get; set; }
 
 
     }

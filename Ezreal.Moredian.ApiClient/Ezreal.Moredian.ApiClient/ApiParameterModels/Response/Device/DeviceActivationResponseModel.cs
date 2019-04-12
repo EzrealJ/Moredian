@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ezreal.Moredian.ApiClient.ApiParameterModels.Response.Device
 {
-    public class ActivationResponseModel:IBusinessResponseModel
+    public class DeviceActivationResponseModel : IBusinessResponseModel
     {
 
 

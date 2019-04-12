@@ -18,7 +18,6 @@ namespace Ezreal.Moredian.ApiClient.ApiParameterModels.Request.Member
         /// <summary>
         /// *魔点内部的人员id
         /// </summary>
-        [ApiParameterName("memberId")]
-        public long MemberID { get; set; }
+        public long MemberId { get; set; }
     }
 }

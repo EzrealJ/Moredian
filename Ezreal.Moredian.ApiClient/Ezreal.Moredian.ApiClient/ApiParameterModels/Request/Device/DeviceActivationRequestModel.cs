@@ -7,11 +7,9 @@ using System.Threading.Tasks;
 
 namespace Ezreal.Moredian.ApiClient.ApiParameterModels.Request.Device
 {
-    public class DynamicPasswordGetRequestModel
+    public class DeviceActivationRequestModel
     {
-        [ApiParameterName("deviceId")]
-        public string DeviceID { get; set; }
-
-        public long Timestamp { get; set; }
+        [ApiParameterName("qrCode")]
+        public string QRCode { get; set; }
     }
 }

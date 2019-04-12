@@ -12,7 +12,7 @@ namespace Ezreal.Moredian.ApiClient.ApiParameterModels.Response.Member
         /// <summary>
         /// 相似人员魔点ID
         /// </summary>
-        public string SimilarMemberID { get; set; }
+        public string SimilarMemberId { get; set; }
 
     }
 }

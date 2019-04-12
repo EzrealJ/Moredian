@@ -11,7 +11,7 @@ namespace Ezreal.Moredian.ApiClient.ApiParameterModels.Response.App
     {
 
         [ApiParameterName("orgId")]
-        public string OrganizationID { get; set; }
+        public string OrganizationId { get; set; }
         [ApiParameterName("orgAuthKey")]
         public string OrganizationAuthKey { get; set; }
 

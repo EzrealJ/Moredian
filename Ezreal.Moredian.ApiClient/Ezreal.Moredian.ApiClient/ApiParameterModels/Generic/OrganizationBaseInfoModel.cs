@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Ezreal.Moredian.ApiClient.ApiParameterModels.Generic
 {
-    public class OrganizationInfoModel
+    public class OrganizationBaseInfoModel
     {
         [ApiParameterName("orgName")]
         public string OrganizationName { get; set; }

@@ -15,8 +15,7 @@ namespace Ezreal.Moredian.ApiClient.ApiParameterModels.Request.App
         /// <summary>
         /// 开发者申请接入后，生成的appid，参见开放平台我的联调页面
         /// </summary>
-        [ApiParameterName("appId")]
-        public string AppID { get; set; }
+        public string AppId { get; set; }
         /// <summary>
         /// 开发者申请接入后，生成的appkey，参见开放平台我的联调页面
         /// </summary>

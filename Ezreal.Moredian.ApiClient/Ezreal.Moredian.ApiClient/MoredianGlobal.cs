@@ -37,6 +37,7 @@ namespace Ezreal.Moredian.ApiClient
                 config.LoggerFactory = loggerFactory;
             };
             HttpApi.Register<ApiContract.IAppContract>().ConfigureHttpApiConfig(configAction);
+            HttpApi.Register<ApiContract.IOrganizationContract>().ConfigureHttpApiConfig(configAction);
             HttpApi.Register<ApiContract.IDeviceContract>().ConfigureHttpApiConfig(configAction);
             HttpApi.Register<ApiContract.IMemberContract>().ConfigureHttpApiConfig(configAction);
         }

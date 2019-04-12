@@ -17,29 +17,6 @@ namespace Ezreal.Moredian.ApiClient.ApiContract
             [Timeout]double timeout = 10000,
             CancellationToken cancellationToken = default(CancellationToken));
 
-        [HttpPost("app/createOrg")]
-        [JsonReturn]
-        ITask<Response<OrganizationCreateResponseModel>> CreateOrganization(
-            [PathQuery]string appToken,
-            [JsonContent]OrganizationInfoModel requestModel,
-            [Timeout]double timeout = 10000,
-            CancellationToken cancellationToken = default(CancellationToken));
 
-        [HttpGet("app/getOrgAccessToken")]
-        [JsonReturn]
-        ITask<Response<OrganizationAccessTokenGetResponseModel>> GetOrganizationAccessToken(
-        [PathQuery]string appToken,
-        [PathQuery]OrganizationAccessTokenGetRequestModel requestModel,
-        [Timeout]double timeout = 10000,
-        CancellationToken cancellationToken = default(CancellationToken));
-
-
-        [HttpPost("org/update")]
-        [JsonReturn]
-        ITask<ResponseOfStruct<bool>> UpdateOrganization(
-            [PathQuery]string accessToken,
-            [JsonContent]OrganizationInfoModel requestModel,
-            [Timeout]double timeout = 10000,
-            CancellationToken cancellationToken = default(CancellationToken));
     }
 }
