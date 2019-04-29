@@ -21,7 +21,7 @@ namespace Ezreal.Moredian.ApiClient.ApiContract
         ITask<Response<OrganizationCreateResponseModel>> CreateOrganization(
     [PathQuery]string appToken,
     [JsonContent]OrganizationBaseInfoModel requestModel,
-    [Timeout]double timeout = 10000,
+    [Timeout]TimeSpan? timeout = null,
     CancellationToken cancellationToken = default(CancellationToken));
 
         [HttpGet("app/getOrgAccessToken")]
@@ -29,7 +29,7 @@ namespace Ezreal.Moredian.ApiClient.ApiContract
         ITask<Response<OrganizationAccessTokenGetResponseModel>> GetOrganizationAccessToken(
         [PathQuery]string appToken,
         [PathQuery]OrganizationAccessTokenGetRequestModel requestModel,
-        [Timeout]double timeout = 10000,
+        [Timeout]TimeSpan? timeout = null,
         CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -38,7 +38,7 @@ namespace Ezreal.Moredian.ApiClient.ApiContract
         ITask<ResponseOfStruct<bool>> UpdateOrganization(
             [PathQuery]string accessToken,
             [JsonContent]OrganizationBaseInfoModel requestModel,
-            [Timeout]double timeout = 10000,
+            [Timeout]TimeSpan? timeout = null,
             CancellationToken cancellationToken = default(CancellationToken));
 
         [HttpPost("callback/addOrgCallback")]
@@ -46,7 +46,7 @@ namespace Ezreal.Moredian.ApiClient.ApiContract
         ITask<ResponseModel> RegisterOrganizationCallback(
         [PathQuery]string accessToken,
         [JsonContent]OrganizationCallBackRegisterRequestModel requestModel,
-        [Timeout]double timeout = 10000,
+        [Timeout]TimeSpan? timeout = null,
         CancellationToken cancellationToken = default(CancellationToken));
 
         [HttpPost("callback/updateOrgCallback")]
@@ -54,7 +54,7 @@ namespace Ezreal.Moredian.ApiClient.ApiContract
         ITask<ResponseModel> UpdateOrganizationCallBack(
         [PathQuery]string accessToken,
         [JsonContent]OrganizationCallBackUpdateRequestModel requestModel,
-        [Timeout]double timeout = 10000,
+        [Timeout]TimeSpan? timeout = null,
         CancellationToken cancellationToken = default(CancellationToken));
     }
 }

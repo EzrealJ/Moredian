@@ -25,17 +25,17 @@ namespace Ezreal.Moredian.ApiClient.Api
 
         public ITask<Response<OrganizationCreateResponseModel>> CreateOrganization(string appToken, OrganizationBaseInfoModel requestModel, TimeSpan? timeout = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return OrganizationContract.CreateOrganization(appToken, requestModel, cancellationToken: cancellationToken);
+            return OrganizationContract.CreateOrganization(appToken, requestModel, timeout, cancellationToken);
         }
 
         public ITask<Response<OrganizationAccessTokenGetResponseModel>> GetOrganizationAccessToken(string appToken, OrganizationAccessTokenGetRequestModel requestModel, TimeSpan? timeout = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return OrganizationContract.GetOrganizationAccessToken(appToken, requestModel, cancellationToken: cancellationToken);
+            return OrganizationContract.GetOrganizationAccessToken(appToken, requestModel, timeout, cancellationToken);
         }
 
         public ITask<ResponseOfStruct<bool>> UpdateOrganization(string accessToken, OrganizationBaseInfoModel requestModel, TimeSpan? timeout = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return OrganizationContract.UpdateOrganization(accessToken, requestModel, cancellationToken: cancellationToken);
+            return OrganizationContract.UpdateOrganization(accessToken, requestModel, timeout, cancellationToken);
         }
     }
 }

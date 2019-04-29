@@ -19,37 +19,37 @@ namespace Ezreal.Moredian.ApiClient.Api
 
         public ITask<Response<DeviceActivationResponseModel>> Activation(string accessToken, DeviceActivationRequestModel requestModel, TimeSpan? timeout = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return DeviceContract.Activation(accessToken, requestModel, cancellationToken: cancellationToken);
+            return DeviceContract.Activation(accessToken, requestModel, timeout, cancellationToken);
         }
 
         public ITask<ResponseOfString> GetDeviceId(string accessToken, string deviceSn, TimeSpan? timeout = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return DeviceContract.GetDeviceId(accessToken, deviceSn, cancellationToken: cancellationToken);
+            return DeviceContract.GetDeviceId(accessToken, deviceSn, timeout, cancellationToken);
         }
 
         public ITask<ResponseModel> UpdateControlInfo(string accessToken, DeviceControlInfoUpdateRequestModel requestModel, TimeSpan? timeout = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return DeviceContract.UpdateControlInfo(accessToken, requestModel, cancellationToken: cancellationToken);
+            return DeviceContract.UpdateControlInfo(accessToken, requestModel, timeout, cancellationToken);
         }
 
         public ITask<ResponseModel> Unbind(string accessToken, DeviceUnbindRequestModel requestModel, TimeSpan? timeout = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return DeviceContract.Unbind(accessToken, requestModel, cancellationToken: cancellationToken);
+            return DeviceContract.Unbind(accessToken, requestModel, timeout, cancellationToken);
         }
 
         public ITask<ResponseModel> GetDynamicPassword(string accessToken, DeviceDynamicPasswordGetRequestModel requestModel, TimeSpan? timeout = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return DeviceContract.GetDynamicPassword(accessToken, requestModel, cancellationToken: cancellationToken);
+            return DeviceContract.GetDynamicPassword(accessToken, requestModel, timeout, cancellationToken);
         }
 
 
         public ITask<ResponseModel> BindGroup(string accessToken, DeviceBindGroupRequestModel requestModel, TimeSpan? timeout = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return DeviceContract.BindGroup(accessToken, requestModel, cancellationToken: cancellationToken);
+            return DeviceContract.BindGroup(accessToken, requestModel, timeout, cancellationToken);
         }
         public ITask<ResponseModel> UnbindGroup(string accessToken, DeviceConfigGroupRequestModel requestModel, TimeSpan? timeout = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return DeviceContract.UnbindGroup(accessToken, requestModel, cancellationToken: cancellationToken);
+            return DeviceContract.UnbindGroup(accessToken, requestModel, timeout, cancellationToken);
         }
     }
 }

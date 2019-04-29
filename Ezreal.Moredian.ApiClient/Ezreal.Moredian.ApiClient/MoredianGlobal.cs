@@ -41,6 +41,7 @@ namespace Ezreal.Moredian.ApiClient
             HttpApi.Register<ApiContract.IOrganizationContract>().ConfigureHttpApiConfig(configAction);
             HttpApi.Register<ApiContract.IDeviceContract>().ConfigureHttpApiConfig(configAction);
             HttpApi.Register<ApiContract.IMemberContract>().ConfigureHttpApiConfig(configAction);
+            HttpApi.Register<ApiContract.IGroupContract>().ConfigureHttpApiConfig(configAction);
         }
     }
 }

@@ -3,10 +3,16 @@
   <PropertyGroup>
     <!--<TargetFramework>netstandard2.0</TargetFramework>-->
     <TargetFrameworks>net45;netstandard2.0</TargetFrameworks>
+    <Description>这是一个.NET实现的魔点科技开放平台接入库，旨在让您编写简单且可读性强代码快速接入魔点科技开放平台</Description>
+    <Authors>Ezreal</Authors>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/EzrealJ/Moredian/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://raw.githubusercontent.com/EzrealJ/Moredian</PackageProjectUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="WebApiClient.AOT" Version="1.0.5" />
+    <PackageReference Include="WebApiClient.JIT" Version="1.0.7" />
   </ItemGroup>
 
 </Project>

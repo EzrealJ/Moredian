@@ -19,7 +19,7 @@ namespace Ezreal.Moredian.ApiClient.ApiContract
         ITask<Response<DeviceActivationResponseModel>> Activation(
         [PathQuery]string accessToken,
         [JsonContent]DeviceActivationRequestModel requestModel,
-        [Timeout]double timeout = 10000,
+        [Timeout]TimeSpan? timeout = null,
         CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -28,7 +28,7 @@ namespace Ezreal.Moredian.ApiClient.ApiContract
         ITask<ResponseOfString> GetDeviceId(
         [PathQuery]string accessToken,
         [PathQuery]string deviceSn,
-        [Timeout]double timeout = 10000,
+        [Timeout]TimeSpan? timeout = null,
         CancellationToken cancellationToken = default(CancellationToken));
 
         [HttpPost("device/updateControlInfo")]
@@ -36,7 +36,7 @@ namespace Ezreal.Moredian.ApiClient.ApiContract
         ITask<ResponseModel> UpdateControlInfo(
         [PathQuery]string accessToken,
         [JsonContent]DeviceControlInfoUpdateRequestModel requestModel,
-        [Timeout]double timeout = 10000,
+        [Timeout]TimeSpan? timeout = null,
         CancellationToken cancellationToken = default(CancellationToken));
 
         [HttpPost("device/unbind")]
@@ -44,7 +44,7 @@ namespace Ezreal.Moredian.ApiClient.ApiContract
         ITask<ResponseModel> Unbind(
         [PathQuery]string accessToken,
         [JsonContent]DeviceUnbindRequestModel requestModel,
-        [Timeout]double timeout = 10000,
+        [Timeout]TimeSpan? timeout = null,
         CancellationToken cancellationToken = default(CancellationToken));
 
         [HttpGet("device/getDynamicPwd")]
@@ -52,7 +52,7 @@ namespace Ezreal.Moredian.ApiClient.ApiContract
         ITask<ResponseModel> GetDynamicPassword(
         [PathQuery]string accessToken,
         [JsonContent]DeviceDynamicPasswordGetRequestModel requestModel,
-        [Timeout]double timeout = 10000,
+        [Timeout]TimeSpan? timeout = null,
         CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -61,7 +61,7 @@ namespace Ezreal.Moredian.ApiClient.ApiContract
         ITask<ResponseModel> BindGroup(
         [PathQuery]string accessToken,
         [JsonContent]DeviceBindGroupRequestModel requestModel,
-        [Timeout]double timeout = 30 * 1000,
+        [Timeout]TimeSpan? timeout,
         CancellationToken cancellationToken = default(CancellationToken));
 
         [HttpPost("device/group/configuration")]
@@ -69,7 +69,7 @@ namespace Ezreal.Moredian.ApiClient.ApiContract
         ITask<ResponseModel> UnbindGroup(
         [PathQuery]string accessToken,
         [JsonContent]DeviceConfigGroupRequestModel requestModel,
-        [Timeout]double timeout = 30 * 1000,
+        [Timeout]TimeSpan? timeout,
         CancellationToken cancellationToken = default(CancellationToken));
     }
 }

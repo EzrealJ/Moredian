@@ -18,7 +18,7 @@ namespace Ezreal.Moredian.ApiClient.ApiContract
         ITask<ResponseOfStruct<ulong>> CreateGroup(
         [PathQuery]string accessToken,
         [JsonContent]GroupBaseInfoModel requestModel,
-        [Timeout]double timeout = 10000,
+        [Timeout]TimeSpan? timeout = null,
         CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -27,7 +27,7 @@ namespace Ezreal.Moredian.ApiClient.ApiContract
         ITask<ResponseOfStruct<ulong>> UpdateGroup(
         [PathQuery]string accessToken,
         [JsonContent]GroupBaseInfoModel requestModel,
-        [Timeout]double timeout = 10000,
+        [Timeout]TimeSpan? timeout = null,
         CancellationToken cancellationToken = default(CancellationToken));
     }
 }

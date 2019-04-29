@@ -20,7 +20,7 @@ namespace Ezreal.Moredian.ApiClient.Api
 
         public ITask<Response<AppTokenGetResponseModel>> GetAppToken(AppTokenGetRequestModel requestModel, TimeSpan? timeout = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return AppContract.GetAppToken(requestModel, cancellationToken: cancellationToken);
+            return AppContract.GetAppToken(requestModel, timeout, cancellationToken);
         }
 
 

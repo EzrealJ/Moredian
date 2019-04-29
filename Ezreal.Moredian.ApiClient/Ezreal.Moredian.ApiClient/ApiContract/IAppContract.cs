@@ -2,6 +2,7 @@
 using Ezreal.Moredian.ApiClient.ApiParameterModels.Request.App;
 using Ezreal.Moredian.ApiClient.ApiParameterModels.Response;
 using Ezreal.Moredian.ApiClient.ApiParameterModels.Response.App;
+using System;
 using System.Threading;
 using WebApiClient;
 using WebApiClient.Attributes;
@@ -14,7 +15,7 @@ namespace Ezreal.Moredian.ApiClient.ApiContract
         [JsonReturn]
         ITask<Response<AppTokenGetResponseModel>> GetAppToken(
             [PathQuery]AppTokenGetRequestModel requestModel,
-            [Timeout]double timeout = 10000,
+            [Timeout]TimeSpan? timeout = null,
             CancellationToken cancellationToken = default(CancellationToken));
 
 
