@@ -27,6 +27,7 @@ namespace Ezreal.Moredian.ApiClient
             {
                 config.JsonFormatter = GlobalConfig.DefaultJsonFormatter;
                 config.HttpHost = new Uri(GlobalConfig.ApiUri);
+                
                 config.FormatOptions.UseCamelCase = true;
                 GlobalConfig.ApiActionFilters.ToList().ForEach(filter => config.GlobalFilters.Add(filter));
                 if (GlobalConfig.UseLog)
