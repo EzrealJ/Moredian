@@ -3,10 +3,8 @@
 
 
 ## 重要
-* 代码对于作者现在已经用不上,作者不会关注魔点方面接口的变更，但仍计划保持更新
 * 如果你在使用的过程中发现接口进行了变更，希望能够及时告知我，Issue,pr,邮件,均可
 * 代码会打包到nuget,后续更新也会
-* 请务必不要放弃DotNET
 
 ## 变更
 * 更改依赖WebApiClient.AOT为WebApiClient.JIT 使更多WebApiClient.JIT的扩展可用
