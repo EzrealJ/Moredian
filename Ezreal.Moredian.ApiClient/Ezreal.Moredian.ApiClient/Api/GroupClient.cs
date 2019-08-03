@@ -15,7 +15,7 @@ namespace Ezreal.Moredian.ApiClient.Api
     {
         public GroupClient(IGroupContract groupContract)
         {
-            GroupContract = groupContract;
+            GroupContract = groupContract ?? HttpApi.Resolve<IGroupContract>();
         }
 
         public IGroupContract GroupContract { get; }

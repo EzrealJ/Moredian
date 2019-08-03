@@ -20,14 +20,14 @@ namespace Ezreal.Moredian.ApiClient
         /// </summary>
         /// <param name="action"></param>   
         /// <param name="loggerFactory">日志工厂</param>
-        public static void InitializeDefaultConfig(Action<MoredianGlobalConfig> action, ILoggerFactory loggerFactory = null)
+        public static void InitializeDefaultConfig(Action<MoredianGlobalConfig> action = null)
         {
-            action.Invoke(GlobalConfig);
+            action?.Invoke(GlobalConfig);
             Action<HttpApiConfig> configAction = config =>
             {
                 config.JsonFormatter = GlobalConfig.DefaultJsonFormatter;
                 config.HttpHost = new Uri(GlobalConfig.ApiUri);
-                
+
                 config.FormatOptions.UseCamelCase = true;
                 GlobalConfig.ApiActionFilters.ToList().ForEach(filter => config.GlobalFilters.Add(filter));
                 if (GlobalConfig.UseLog)
@@ -35,7 +35,6 @@ namespace Ezreal.Moredian.ApiClient
                     config.GlobalFilters.Add(new WebApiClient.Attributes.TraceFilterAttribute());
                 }
                 config.FormatOptions.DateTimeFormat = WebApiClient.DateTimeFormats.ISO8601_WithMillisecond;
-                config.LoggerFactory = loggerFactory;
             };
             HttpApi.Register<ApiContract.IAppContract>().ConfigureHttpApiConfig(configAction);
             HttpApi.Register<ApiContract.IOrganizationContract>().ConfigureHttpApiConfig(configAction);

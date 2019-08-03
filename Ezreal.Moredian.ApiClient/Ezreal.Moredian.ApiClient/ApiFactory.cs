@@ -16,5 +16,7 @@ namespace Ezreal.Moredian.ApiClient
 
         public static Api.MemberClient CreateMemberClient() => new Api.MemberClient(null);
 
+        public static Api.GroupClient CreateGroupClient() => new Api.GroupClient(null);
+
     }
 }

@@ -19,10 +19,10 @@ namespace Ezreal.Moredian.ApiClient.ApiContract
         [HttpPost("app/createOrg")]
         [JsonReturn]
         ITask<Response<OrganizationCreateResponseModel>> CreateOrganization(
-    [PathQuery]string appToken,
-    [JsonContent]OrganizationBaseInfoModel requestModel,
-    [Timeout]TimeSpan? timeout = null,
-    CancellationToken cancellationToken = default(CancellationToken));
+        [PathQuery]string appToken,
+        [JsonContent]OrganizationBaseInfoModel requestModel,
+        [Timeout]TimeSpan? timeout = null,
+        CancellationToken cancellationToken = default(CancellationToken));
 
         [HttpGet("app/getOrgAccessToken")]
         [JsonReturn]
