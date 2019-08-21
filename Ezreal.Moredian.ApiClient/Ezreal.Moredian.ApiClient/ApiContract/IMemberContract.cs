@@ -26,7 +26,7 @@ namespace Ezreal.Moredian.ApiClient.ApiContract
         [MulitpartContent]MemberBaseInfoModel requestModel,
         MulitpartFile verifyFace = null,
         MulitpartFile showFace = null,
-        [Timeout]TimeSpan? timeout=null,
+        [Timeout]TimeSpan? timeout = null,
         CancellationToken cancellationToken = default(CancellationToken));
 
         [HttpPost("member/update")]
@@ -62,6 +62,15 @@ namespace Ezreal.Moredian.ApiClient.ApiContract
         ITask<ResponseModel> UpdateVerifyImg(
         [PathQuery]string accessToken,
         [MulitpartContent]MemberUpdateVerifyImgRequestModel requestModel,
+        MulitpartFile verifyFace = null,
+        [Timeout]TimeSpan? timeout = null,
+        CancellationToken cancellationToken = default(CancellationToken));
+
+        [HttpPost("member/deleteVerifyImg")]
+        [JsonReturn]
+        ITask<ResponseModel> DeleteVerifyImg(
+        [PathQuery]string accessToken,
+        [MulitpartContent]MemberDeleteVerifyImgRequestModel requestModel,
         MulitpartFile verifyFace = null,
         [Timeout]TimeSpan? timeout = null,
         CancellationToken cancellationToken = default(CancellationToken));
