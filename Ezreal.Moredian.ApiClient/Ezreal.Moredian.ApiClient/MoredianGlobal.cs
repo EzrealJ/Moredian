@@ -19,7 +19,6 @@ namespace Ezreal.Moredian.ApiClient
         /// <para>在没有DI的情况下可以使用它来初始化配置</para>
         /// </summary>
         /// <param name="action"></param>   
-        /// <param name="loggerFactory">日志工厂</param>
         public static void InitializeDefaultConfig(Action<MoredianGlobalConfig> action = null)
         {
             action?.Invoke(GlobalConfig);
