@@ -9,15 +9,13 @@ namespace Ezreal.Moredian.ApiClient
 {
     public class MoredianGlobalConfig
     {
+
+        public static MoredianGlobalConfig DefaultInstance { get; set; } = new MoredianGlobalConfig();
         /// <summary>
         /// 生产环境Uri
         /// </summary>
         public string ProductionEnvironmentApiUri { get; set; } = "https://oapi.moredian.com/";
-        /// <summary>
-        /// 沙箱环境Uri
-        /// </summary>
 
-        //public string SandboxEnvironmentApiUri { get; set; } = string.Empty;
 
         /// <summary>
         /// Api地址

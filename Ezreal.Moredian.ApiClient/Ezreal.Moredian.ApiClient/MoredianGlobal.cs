@@ -10,10 +10,7 @@ namespace Ezreal.Moredian.ApiClient
 {
     public class MoredianGlobal
     {
-        /// <summary>
-        /// 静态的全局配置信息
-        /// </summary>
-        public static MoredianGlobalConfig GlobalConfig { get; set; } = new MoredianGlobalConfig();
+
         /// <summary>
         /// 初始化全局配置
         /// <para>在没有DI的情况下可以使用它来初始化配置</para>
@@ -21,15 +18,15 @@ namespace Ezreal.Moredian.ApiClient
         /// <param name="action"></param>   
         public static void InitializeDefaultConfig(Action<MoredianGlobalConfig> action = null)
         {
-            action?.Invoke(GlobalConfig);
+            action?.Invoke(MoredianGlobalConfig.DefaultInstance);
             Action<HttpApiConfig> configAction = config =>
             {
-                config.JsonFormatter = GlobalConfig.DefaultJsonFormatter;
-                config.HttpHost = new Uri(GlobalConfig.ApiUri);
+                config.JsonFormatter = MoredianGlobalConfig.DefaultInstance.DefaultJsonFormatter;
+                config.HttpHost = new Uri(MoredianGlobalConfig.DefaultInstance.ApiUri);
 
                 config.FormatOptions.UseCamelCase = true;
-                GlobalConfig.ApiActionFilters.ToList().ForEach(filter => config.GlobalFilters.Add(filter));
-                if (GlobalConfig.UseLog)
+                MoredianGlobalConfig.DefaultInstance.ApiActionFilters.ToList().ForEach(filter => config.GlobalFilters.Add(filter));
+                if (MoredianGlobalConfig.DefaultInstance.UseLog)
                 {
                     config.GlobalFilters.Add(new WebApiClient.Attributes.TraceFilterAttribute());
                 }

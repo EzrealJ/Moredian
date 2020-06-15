@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ezreal.Moredian.ApiClient",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{8B01D3D2-169C-405A-8CC2-0AB5D8E74550}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{8AF44A6E-EA3F-4121-8A93-0532005A1772}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{8AF44A6E-EA3F-4121-8A93-0532005A1772}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ezreal.Moredian.ApiClient.DependencyInjection", "Ezreal.Moredian.ApiClient.DependencyInjection\Ezreal.Moredian.ApiClient.DependencyInjection.csproj", "{502B139A-F874-449C-97CE-692A6BDBEECE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{8AF44A6E-EA3F-4121-8A93-0532005A1772}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AF44A6E-EA3F-4121-8A93-0532005A1772}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AF44A6E-EA3F-4121-8A93-0532005A1772}.Release|Any CPU.Build.0 = Release|Any CPU
+		{502B139A-F874-449C-97CE-692A6BDBEECE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{502B139A-F874-449C-97CE-692A6BDBEECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{502B139A-F874-449C-97CE-692A6BDBEECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{502B139A-F874-449C-97CE-692A6BDBEECE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
