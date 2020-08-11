@@ -21,10 +21,7 @@ namespace Ezreal.Moredian.ApiClient
         /// Api地址
         /// </summary>
         public string ApiUri => ProductionEnvironmentApiUri;
-        /// <summary>
-        /// 使用沙箱,默认false
-        /// </summary>
-        //public bool UseSandbox { get;  } = false;
+
 
         /// <summary>
         /// 启用日志,默认false

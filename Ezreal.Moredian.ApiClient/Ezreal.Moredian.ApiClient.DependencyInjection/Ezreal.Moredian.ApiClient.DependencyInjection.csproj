@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.0.5</Version>
+    <Authors>Ezreal</Authors>
+    <Company>Ezreal</Company>
+    <Description>这是一个.NET实现的魔点科技开放平台接入库的MSDI扩展库，旨在让您编写简单且可读性强代码快速接入魔点科技开放平台</Description>
+    <PackageProjectUrl>https://github.com/EzrealJ/Moredian</PackageProjectUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
