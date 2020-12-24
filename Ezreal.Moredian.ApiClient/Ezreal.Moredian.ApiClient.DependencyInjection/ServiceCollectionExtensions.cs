@@ -7,7 +7,7 @@ using WebApiClient;
 
 namespace Ezreal.Moredian.ApiClient.DependencyInjection
 {
-   public static class ServiceCollectionExtensions
+    public static class ServiceCollectionExtensions
     {
         /// <summary>
         /// 添加HttpApi
@@ -16,7 +16,7 @@ namespace Ezreal.Moredian.ApiClient.DependencyInjection
         /// <typeparam name="TInterface">接口类型</typeparam>
         /// <param name="services"></param>
         /// <returns></returns>
-        public static void AddShouQianBaApiClient(this IServiceCollection services, Action<MoredianGlobalConfig> action = null)
+        public static void AddMoredianApiClient(this IServiceCollection services, Action<MoredianGlobalConfig> action = null)
 
         {
             services.AddSingleton(MoredianGlobalConfig.DefaultInstance);
@@ -32,7 +32,7 @@ namespace Ezreal.Moredian.ApiClient.DependencyInjection
                     config.GlobalFilters.Add(new WebApiClient.Attributes.TraceFilterAttribute());
                 }
                 config.FormatOptions.DateTimeFormat = WebApiClient.DateTimeFormats.ISO8601_WithMillisecond;
-            };    
+            };
 
             services.AddHttpApiFactory<ApiContract.IAppContract>(configAction);
             services.AddHttpApiFactory<ApiContract.IOrganizationContract>(configAction);
