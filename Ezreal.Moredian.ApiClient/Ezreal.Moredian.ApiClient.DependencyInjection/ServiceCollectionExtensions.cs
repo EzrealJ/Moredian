@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,19 +14,19 @@ namespace Ezreal.Moredian.ApiClient.DependencyInjection
         /// 添加HttpApi
         /// 返回HttpApi工厂
         /// </summary>
-        /// <typeparam name="TInterface">接口类型</typeparam>
         /// <param name="services"></param>
         /// <returns></returns>
         public static void AddMoredianApiClient(this IServiceCollection services, Action<MoredianGlobalConfig> action = null)
 
         {
-            services.AddSingleton(MoredianGlobalConfig.DefaultInstance);
+            services.TryAddSingleton(MoredianGlobalConfig.DefaultInstance);
             action?.Invoke(MoredianGlobalConfig.DefaultInstance);
 
             Action<HttpApiConfig> configAction = config =>
             {
                 config.HttpHost = new Uri(MoredianGlobalConfig.DefaultInstance.ApiUri);
                 config.FormatOptions.IgnoreNullProperty = true;
+                config.FormatOptions.UseCamelCase = true;
                 MoredianGlobalConfig.DefaultInstance.ApiActionFilters.ToList().ForEach(filter => config.GlobalFilters.Add(filter));
                 if (MoredianGlobalConfig.DefaultInstance.UseLog)
                 {
